@@ -24,8 +24,14 @@
 #include <stdbool.h>
 
 
+#ifndef __cplusplus
+#ifndef min
 #define min(a,b) (((a)<(b))?(a):(b))
+#endif
+#ifndef max
 #define max(a,b) (((a)>(b))?(a):(b))
+#endif
+#endif
 
 int ch341a_spi_init(void);
 int ch341a_spi_shutdown(void);

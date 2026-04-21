@@ -44,7 +44,11 @@ DialogCompare::DialogCompare(QWidget *parent) :
     hexEdit2->setReadOnly(true);
     ui->checkBox->setChecked(false);
     QFontMetrics fm(hexEdit1->fontMetrics());
-    int pixelsHigh =fm.horizontalAdvance("F");
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+    int pixelsHigh = fm.horizontalAdvance("F");
+#else
+    int pixelsHigh = fm.width("F");
+#endif
     DialogCompare::resize(pixelsHigh * 122, DialogCompare::height());
     hexEdit1->setAsciiArea(false);
     hexEdit2->setAsciiArea(false);
@@ -128,7 +132,11 @@ void DialogCompare::resizeEvent(QResizeEvent* event)
 void DialogCompare::on_checkBox_stateChanged(int arg1)
 {
     QFontMetrics fm(hexEdit1->fontMetrics());
-    int pixelsHigh =fm.horizontalAdvance("F");
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+    int pixelsHigh = fm.horizontalAdvance("F");
+#else
+    int pixelsHigh = fm.width("F");
+#endif
     if (arg1 == 0)
     {
         hexEdit1->setAsciiArea(false);

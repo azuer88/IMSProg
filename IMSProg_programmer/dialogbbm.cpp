@@ -19,6 +19,7 @@
 #include <QTabWidget>
 #include <QTableWidgetItem>
 #include <QDebug>
+#include <memory>
 
 DialogBBM::DialogBBM(QWidget *parent) :
     QDialog(parent),

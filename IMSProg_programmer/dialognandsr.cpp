@@ -38,7 +38,11 @@ DialogNANDSr::DialogNANDSr(QWidget *parent) :
     regReaded = false;
     QFontMetrics fm(ui->textEdit_buf->fontMetrics());
         int pixelsHigh = fm.height();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
         int pixelsWidth = fm.horizontalAdvance("00> 4F 4E 46 49 00 00 00 00 02 00 00 00 00 00 00 00 ") + 20;
+#else
+        int pixelsWidth = fm.width("00> 4F 4E 46 49 00 00 00 00 02 00 00 00 00 00 00 00 ") + 20;
+#endif
         int sectionHeight = pixelsHigh * 16 + 6;
         ui->textEdit_buf->setMinimumHeight(sectionHeight);
         ui->textEdit_buf->setMinimumWidth(pixelsWidth);

@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QByteArray>
 #include <QFileInfo>
+#include <memory>
 #include "qhexedit.h"
 
 DialogNandSecurity::DialogNandSecurity(QWidget *parent) :

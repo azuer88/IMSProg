@@ -17,6 +17,7 @@
 #include "mainwindow.h"
 #include <QDebug>
 #include <QFileInfo>
+#include <memory>
 #include "qhexedit.h"
 #include "spi_controller.h"
 

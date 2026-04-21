@@ -41,6 +41,7 @@
 #include "hexutility.h"
 #include <stddef.h>
 #include <stdint.h>
+#include <memory>
 
 
 MainWindow::MainWindow(QWidget *parent) :

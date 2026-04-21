@@ -81,8 +81,14 @@ extern "C" {
 
 #define BULK_WRITE_ENDPOINT         0x06
 
+#ifndef __cplusplus
+#ifndef min
 #define min(a,b) (((a)<(b))?(a):(b))
+#endif
+#ifndef max
 #define max(a,b) (((a)>(b))?(a):(b))
+#endif
+#endif
 
 struct ch347_spi_hw_config {
     uint16_t SPI_Direction;
